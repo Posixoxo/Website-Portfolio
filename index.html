@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Web Designer Portfolio</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav main-nav">
+            <img src="Images/mariia-shalabaieva-8-iznmLhw_0-unsplash 2.jpg" alt="Portfolio Logo" class="logo">
+            <div class="nbar nav-links">
+                <a href="index.html">Home</a>
+                <a href="project.html">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="image-container">
+                <img src="Images/sufyan-citCwZg21Hg-unsplash.jpg" alt="Desk setup with computer monitor" class="backG hero-img">
+                <div class="overlay"></div>
+                
+                <div class="content hero-content">
+                    <h1 class="drop-in">Hi, I’m John Doe. A Web Designer.</h1>
+                    <a href="project.html">
+                        <button type="button">View My Work</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="About about-content">
+                <h2>About Me</h2>
+                <p>
+                    Hi! I'm **Jane Doe** (changed from John to Jane for consistency with the bio), a passionate front-end developer with a love for clean, responsive design. I enjoy turning complex problems into simple, beautiful, and intuitive interfaces.
+                </p>
+                <p>
+                    With 3+ years of experience, I've collaborated with cross-functional teams to build scalable products using **HTML, CSS, JavaScript, and React.**
+                </p>
+            </div>
+            
+            <div class="FOG gear-setup-container">
+                <div class="fog-item">
+                    <img src="Images/eftakher-alam-i1VQZsU86ok-unsplash.jpg" alt="VS Code on a computer screen">
+                    <p>I spend most of my time in modern editors like **VS Code**, where every line of code becomes an opportunity to craft something meaningful. From setting up efficient workflows to customizing my environment for speed and clarity, I believe that great design starts in a focused, well-structured development space.</p>
+                </div>
+
+                <div class="fog-item reverse">
+                    <img src="Images/campaign-creators-iEiUITs149M-unsplash.jpg" alt="A multi-monitor computer setup">
+                    <p>Having a **multi-monitor setup** allows me to streamline my workflow — one screen for coding, the other for live previews, documentation, or communication. This setup reflects how I thrive in fast-paced environments, staying both productive and adaptable across projects of any scale.</p>
+                </div>
+
+                <div class="fog-item">
+                    <img src="Images/domenico-loia-hGV2TfOh0ns-unsplash.jpg" alt="A clean, minimalist desk setup">
+                    <p>I value **clean and intentional workspaces**, both on-screen and off. A minimal, organized setup helps me stay focused, creative, and ready to dive into solving complex UI/UX challenges. For me, clarity in my physical space mirrors clarity in the digital experiences I create.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <form action="#" method="POST" class="contact-form">
+
+                <div class="FRM form-container mobile-version">
+                    <h1>Contact Information</h1>
+                    <div>
+                        <label for="name-mobile">Name *</label>
+                        <input type="text" id="name-mobile" name="name-mobile" required>
+                    </div>
+                    <div>
+                        <label for="email-mobile">Email *</label>
+                        <input type="email" id="email-mobile" name="email-mobile" required>
+                    </div>
+                    <div>
+                        <label for="message-mobile">Message *</label>
+                        <textarea name="message-mobile" id="message-mobile" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </div>
+
+                <div class="desktop-version">
+                    <div class="FRM form-container">
+                        <h1>Contact Information</h1>
+                        <div class="F-inputs form-row">
+                            <div>
+                                <label for="name-desktop">Name *</label>
+                                <input type="text" id="name-desktop" name="name-desktop" required>
+                            </div>
+                            <div>
+                                <label for="email-desktop">Email *</label>
+                                <input type="email" id="email-desktop" name="email-desktop" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message-desktop">Message *</label>
+                            <textarea name="message-desktop" id="message-desktop" rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-socials">
+            <img src="images/icon-facebook.svg" alt="Facebook icon" class="img-t social-icon">
+            <img src="images/icon-twitter.svg" alt="Twitter icon" class="img-t social-icon">
+            <img src="images/icon-instagram.svg" alt="Instagram icon" class="img-t social-icon">
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // Select all items that need to be animated on scroll
+          const itemsToAnimate = document.querySelectorAll('.fog-item');
+      
+          // Create a new Intersection Observer instance
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              // Check if the element is currently visible in the viewport
+              if (entry.isIntersecting) {
+                // Add 'visible' class to trigger the CSS transition/animation
+                entry.target.classList.add('visible');
+                // Stop observing this element after it has appeared (optional)
+                observer.unobserve(entry.target); 
+              }
+            });
+          }, {
+            // Options: Start observing when 10% of the item is visible
+            threshold: 0.1 
+          });
+      
+          // Loop through all items and set up the observer
+          itemsToAnimate.forEach(item => observer.observe(item));
+        });
+      </script>
+   
+</body>
+</html>
