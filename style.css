@@ -464,6 +464,25 @@ PROJECTS PAGE STYLES (project.html)
   color: #B87333;
 }
 
+/*==================================
+THANK YOU PAGE STYLES (project.html)
+==================================*/
+
+.Thank-you {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px 50px;
+  background-color: #121212; /* Dark background */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+}
+
+.Thank-you p{
+  font-size: 80px;
+  text-align: center;
+  margin-top: 150px;
+}
+
 
 /*==================================
 MEDIA QUERY: DESKTOP STYLES
