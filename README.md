@@ -1,3 +1,11 @@
+This section came from my local README (local):
+
+…content from your local version…
+
+
+# Website-Portfolio
+
+>>>>>>> 01cf67e (Updated images (deleted some, added new ones))
 🌟 John Doe Portfolio | Clean & Responsive Web Designer Template
 
 
@@ -27,4 +35,9 @@ HTML5 (Semantic Structure)
 CSS3 (Flexbox, Grid, Custom Properties, Responsive Media Queries)
 
 JavaScript (Vanilla JS for Intersection Observer and Filtering Logic)
+
+
+This section came from the GitHub README (remote):
+
+…content from GitHub version…
 
