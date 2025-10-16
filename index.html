@@ -91,49 +91,49 @@
                 </a>
             </div>
 
-            <form action="/api/contact" method="POST" class="contact-form">
+            <!-- Mobile Form -->
+<form action="/api/contact" method="POST" class="contact-form mobile-version">
+    <div class="FRM form-container">
+        <h1>Get In Touch</h1>
+        <div>
+            <label for="name-mobile">Name *</label>
+            <input type="text" id="name-mobile" name="name" required>
+        </div>
+        <div>
+            <label for="email-mobile">Email *</label>
+            <input type="email" id="email-mobile" name="email" required>
+        </div>
+        <div>
+            <label for="message-mobile">Message *</label>
+            <textarea name="message" id="message-mobile" rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
 
-                <div class="FRM form-container mobile-version">
-                    <h1>Get In Touch</h1>
-                    <div>
-                        <label for="name-mobile">Name *</label>
-                        <input type="text" id="name-mobile" name="name" required>
-                    </div>
-                    <div>
-                        <label for="email-mobile">Email *</label>
-                        <input type="email" id="email-mobile" name="email" required>
-                    </div>
-                    <div>
-                        <label for="message-mobile">Message *</label>
-                        <textarea name="message" id="message-mobile" rows="4" required></textarea>
-                    </div>
-                    <button type="submit">Submit</button>
-                </div>
-            
-                <div class="desktop-version">
-                    <div class="FRM form-container">
-                        <h1>Get In Touch</h1>
-                        <div class="F-inputs form-row">
-                            <div>
-                                <label for="name-desktop">Name *</label>
-                                <input type="text" id="name-desktop" name="name" required>
-                            </div>
-                            <div>
-                                <label for="email-desktop">Email *</label>
-                                <input type="email" id="email-desktop" name="email" required>
-                            </div>
-                        </div>
-            
-                        <div>
-                            <label for="message-desktop">Message *</label>
-                            <textarea name="message" id="message-desktop" rows="6" required></textarea>
-                        </div>
-                        
-                        <button type="submit">Submit</button>
-                    </div>
-                </div>
-            
-            </form>
+<!-- Desktop Form -->
+<form action="/api/contact" method="POST" class="contact-form desktop-version">
+    <div class="FRM form-container">
+        <h1>Get In Touch</h1>
+        <div class="F-inputs form-row">
+            <div>
+                <label for="name-desktop">Name *</label>
+                <input type="text" id="name-desktop" name="name" required>
+            </div>
+            <div>
+                <label for="email-desktop">Email *</label>
+                <input type="email" id="email-desktop" name="email" required>
+            </div>
+        </div>
+
+        <div>
+            <label for="message-desktop">Message *</label>
+            <textarea name="message" id="message-desktop" rows="6" required></textarea>
+        </div>
+        
+        <button type="submit">Submit</button>
+    </div>
+</form>
         </section>
     </main>
     
