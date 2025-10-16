@@ -242,6 +242,41 @@ ABOUT SECTION (index.html)
 CONTACT FORM SECTION (index.html)
 ==================================*/
 
+.icon-img{
+  display: block;
+  max-width: 100%;
+  width: 50px;
+  margin: 50px auto 7px auto;
+}
+
+.contact-container{
+  border: 1px solid transparent;
+  background-color: #D8CAB8;
+  border-radius: 20px;
+  margin: auto 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.con-act {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: inherit; 
+  cursor: pointer;
+}
+
+.con-act:hover {
+  opacity: 0.8;
+  color: black;
+}
+
 .FRM {
   border: 1px solid transparent;
   text-align: center;
@@ -249,7 +284,7 @@ CONTACT FORM SECTION (index.html)
   margin-top: 150px;
   padding-bottom: 20px;
   background-color: #B87333; /* Primary accent color for form background */
-  border-radius: 10px;
+  border-radius: 20px;
   color: blanchedalmond;
 }
 
@@ -653,4 +688,16 @@ MEDIA QUERY: DESKTOP STYLES
   .project-card:hover {
       transform: scale(1.03);
   }
+
+  .contact-container {
+      flex-direction: row !important;
+      justify-content: space-around;
+      gap: 30px;
+    }
+    
+    .con-act {
+      flex: 1;
+    }
+  
+
 }
