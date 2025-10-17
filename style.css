@@ -196,7 +196,7 @@ ABOUT SECTION (index.html)
   justify-content: space-between;
   gap: 20px; /* Reduced gap for mobile */
   flex-wrap: wrap;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -251,7 +251,6 @@ CONTACT FORM SECTION (index.html)
 
 .contact-container{
   border: 1px solid transparent;
-  background-color: #D8CAB8;
   border-radius: 20px;
   margin: auto 40px;
   padding-bottom: 40px;
@@ -270,6 +269,7 @@ CONTACT FORM SECTION (index.html)
   text-decoration: none;
   color: inherit; 
   cursor: pointer;
+  color: white;
 }
 
 .con-act:hover {
