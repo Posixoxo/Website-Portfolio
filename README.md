@@ -5,7 +5,6 @@ This section came from my local README (local):
 
 # Website-Portfolio
 
->>>>>>> 01cf67e (Updated images (deleted some, added new ones))
 🌟 John Doe Portfolio | Clean & Responsive Web Designer Template
 
 
