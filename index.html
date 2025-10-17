@@ -146,6 +146,26 @@
     </footer>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('.contact-form');
+            
+            console.log('Number of forms found:', forms.length);
+            
+            forms.forEach((form, index) => {
+                console.log(`Form ${index + 1}:`);
+                console.log('- Action:', form.action);
+                console.log('- Method:', form.method);
+                console.log('- Classes:', form.className);
+                
+                // Log when form is submitted
+                form.addEventListener('submit', function(e) {
+                    console.log(`Form ${index + 1} is being submitted to:`, form.action);
+                });
+            });
+        });
+        </script>
+
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
           // Select all items that need to be animated on scroll
           const itemsToAnimate = document.querySelectorAll('.fog-item');
