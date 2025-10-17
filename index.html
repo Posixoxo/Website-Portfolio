@@ -149,17 +149,41 @@
         document.addEventListener('DOMContentLoaded', function() {
             const forms = document.querySelectorAll('.contact-form');
             
-            console.log('Number of forms found:', forms.length);
-            
-            forms.forEach((form, index) => {
-                console.log(`Form ${index + 1}:`);
-                console.log('- Action:', form.action);
-                console.log('- Method:', form.method);
-                console.log('- Classes:', form.className);
-                
-                // Log when form is submitted
-                form.addEventListener('submit', function(e) {
-                    console.log(`Form ${index + 1} is being submitted to:`, form.action);
+            forms.forEach(form => {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault(); // Stop normal form submission
+                    
+                    const formData = new FormData(this);
+                    const data = {
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        message: formData.get('message')
+                    };
+                    
+                    console.log('Submitting data:', data);
+                    
+                    try {
+                        const response = await fetch('/api/contact', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+                        
+                        console.log('Response status:', response.status);
+                        
+                        if (response.redirected) {
+                            window.location.href = response.url;
+                        } else if (response.ok) {
+                            window.location.href = '/thankyou.html';
+                        } else {
+                            alert('Error submitting form. Please try again.');
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('Error submitting form. Please try again.');
+                    }
                 });
             });
         });
