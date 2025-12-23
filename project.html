@@ -12,90 +12,247 @@
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="site-header">
-        <nav class="nav main-nav">
-            <img src="Images/mariia-shalabaieva-8-iznmLhw_0-unsplash 2.jpg" alt="Portfolio Logo" class="logo">
-            <div class="nbar nav-links">
+    
+    <header class="nav mobile-version" id="navHeader">
+        <nav class="nbar">
+
+            <div class="nav-header">
+                <img src="Images/icon-hamburger.svg" alt="hamburger" class="icon-hamburger" id="hamburgerIcon">
+                <img src="Images/icon-close.svg" alt="close" class="icon-close" id="closeIcon">
+
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="project.html">Projects</a>
-                <a href="index.html#about">About</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="About.html">About</a>
+                <a href="contact.html">Contact</a>
             </div>
         </nav>
     </header>
 
-    <main>
+
+    <header class="desktop-version">
+
+        <nav class="nav3">
+            <div class="nav-links1">
+                <a href="index.html">Home</a>
+                <a href="project.html">Projects</a>
+                <a href="About.html">About</a>
+                <a href="contact.html" class="cont">Contact</a>
+            </div>
+
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+
+    </header>
+
+
+
         <section class="projects-page">
-            <header class="projects-header">
-              <h1>My Projects</h1>
-              <p>A collection of my recent web development work.</p>
-            </header>
-          
-            <section class="project-filters">
-              <button data-filter="all" class="active" type="button">All</button>
-              <button data-filter="react" type="button">React</button>
-              <button data-filter="javascript" type="button">JavaScript</button>
-              <button data-filter="css" type="button">CSS</button>
-            </section>
-          
-            <section class="projects-grid">
-              <article class="project-card">
-                <img src="Images/Screen Shot 2025-09-17 at 2.28.29 PM.png" alt="Screenshot of the Social Links project" />
-                <h3>Social Links Page</h3>
-                <p>A clean and responsive page that displays all my social media links in one place. Built with HTML and CSS, it works well on both desktop and mobile.</p>
 
-                <div class="tech-badges">
-                  <span>CSS</span>
-                  <span>HTML</span>
+            <div class="project-backg">
+                <div class="design-about2"><h2>PORTFOLIO</h2></div>
+                <p>A collection of my recent web development work.</p>
+            </div>
+
+            <div class="project-filters">
+                <div class="flex-filters1">
+                    <button data-filter="all" class="active" type="button">All</button>
+                    <button data-filter="html" type="button">Html</button>
+                </div>
+                <div class="flex-filters2">
+                    <button data-filter="javascript" type="button">JavaScript</button>
+                    <button data-filter="css" type="button">CSS</button>
+                </div>
+                <button data-filter="react" type="button">React</button>
+            </div>
+
+            
+              <div class="projects-grid">
+
+
+
+
+
+                <div class="project-card">
+                  <img src="Images/Screen Shot 2025-09-17 at 2.28.29 PM.png" alt="Screenshot of the Social Links project" class="img-project">
+                  <h3>Social Links Page</h3>
+                  <p>A clean and responsive page that displays all my social media links in one place.</p>
+  
+                  <div class="tech-badges">
+                    <span>CSS</span>
+                    <span>HTML</span>
+                  </div>
+  
+                  <div class="links">
+                    
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <div class="flex-more3">
+                            <div class="line-10"></div>
+                            <p>GITHUB</p>
+                            <div class="line-11"></div>
+                        </div>
+                    </a>
+
+
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <div class="flex-more3">
+                            <div class="line-10"></div>
+                            <p>LIVE DEMO</p>
+                            <div class="line-11"></div>
+                        </div>
+                    </a>
+
+                  </div>
+
                 </div>
 
-                <div class="links">
-                  <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-                  <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                </div>
-              </article>
 
-              </section>
-        </section>
-    </main>
+
+
+
+                <div class="project-card">
+                    <img src="Images/Screen Shot 2025-09-17 at 2.28.29 PM.png" alt="Screenshot of the Social Links project" class="img-project">
+                    <h3>Social Links Page</h3>
+                    <p>A clean and responsive page that displays all my social media links in one place.</p>
     
-    <footer>
-        <div class="footer-socials">
-            <img src="Images/icon-facebook.svg" alt="Facebook icon" class="img-t social-icon">
-            <img src="Images/icon-twitter.svg" alt="Twitter icon" class="img-t social-icon">
-            <img src="Images/icon-instagram.svg" alt="Instagram icon" class="img-t social-icon">
-        </div>
-    </footer>
+                    <div class="tech-badges">
+                      <span>CSS</span>
+                      <span>HTML</span>
+                    </div>
+    
+                    <div class="links">
+                      
+                      <a href="#" target="_blank" rel="noopener noreferrer">
+                          <div class="flex-more3">
+                              <div class="line-10"></div>
+                              <p>GITHUB</p>
+                              <div class="line-11"></div>
+                          </div>
+                      </a>
+  
+  
+                      <a href="#" target="_blank" rel="noopener noreferrer">
+                          <div class="flex-more3">
+                              <div class="line-10"></div>
+                              <p>LIVE DEMO</p>
+                              <div class="line-11"></div>
+                          </div>
+                      </a>
+  
+                    </div>
+  
+                  </div>
 
 
-    <script>
-      // Select all filter buttons and project cards
-      const buttons = document.querySelectorAll('.project-filters button');
-      const cards = document.querySelectorAll('.project-card');
-      
-      buttons.forEach(button => {
-          button.addEventListener('click', () => {
-              // 1. Update active button state
-              buttons.forEach(btn => btn.classList.remove('active'));
-              button.classList.add('active');
-      
-              // Get the filter term from the button's data attribute (e.g., 'react', 'css')
-              const filter = button.dataset.filter;
-      
-              // 2. Loop through all project cards and apply visibility based on the filter
-              cards.forEach(card => {
-                  // The filtering logic checks if the card's inner HTML (which contains the tech badges) 
-                  // includes the filter term, or if the filter is set to 'all'.
-                  // NOTE: This relies on the filter name matching text inside the card (e.g., 'CSS' matching 'css' in the HTML).
-                  if (filter === 'all' || card.innerHTML.toLowerCase().includes(filter)) {
-                      card.style.display = 'block'; // Show card
-                  } else {
-                      card.style.display = 'none';  // Hide card
-                  }
-              });
-          });
-      });
-    </script>
-      
+
+                  <div class="project-card">
+                    <img src="Images/Screen Shot 2025-09-17 at 2.28.29 PM.png" alt="Screenshot of the Social Links project" class="img-project">
+                    <h3>Social Links Page</h3>
+                    <p>A clean and responsive page that displays all my social media links in one place.</p>
+    
+                    <div class="tech-badges">
+                      <span>CSS</span>
+                      <span>HTML</span>
+                    </div>
+    
+                    <div class="links">
+                      
+                      <a href="#" target="_blank" rel="noopener noreferrer">
+                          <div class="flex-more3">
+                              <div class="line-10"></div>
+                              <p>GITHUB</p>
+                              <div class="line-11"></div>
+                          </div>
+                      </a>
+  
+  
+                      <a href="#" target="_blank" rel="noopener noreferrer">
+                          <div class="flex-more3">
+                              <div class="line-10"></div>
+                              <p>LIVE DEMO</p>
+                              <div class="line-11"></div>
+                          </div>
+                      </a>
+  
+                    </div>
+  
+                  </div>
+
+
+
+                  <div class="project-card">
+                  <img src="Images/Screen Shot 2025-09-17 at 2.28.29 PM.png" alt="Screenshot of the Social Links project" class="img-project">
+                  <h3>Social Links Page</h3>
+                  <p>A clean and responsive page that displays all my social media links in one place.</p>
+  
+                  <div class="tech-badges">
+                    <span>CSS</span>
+                    <span>HTML</span>
+                  </div>
+  
+                  <div class="links">
+                    
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <div class="flex-more3">
+                            <div class="line-10"></div>
+                            <p>GITHUB</p>
+                            <div class="line-11"></div>
+                        </div>
+                    </a>
+
+
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <div class="flex-more3">
+                            <div class="line-10"></div>
+                            <p>LIVE DEMO</p>
+                            <div class="line-11"></div>
+                        </div>
+                    </a>
+
+                  </div>
+
+                </div>
+
+
+
+
+              </div>
+
+        </section>
+
+<script src="script.js"></script>
 </body>
 </html>

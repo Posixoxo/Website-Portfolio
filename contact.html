@@ -3,17 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe - Web Designer Portfolio</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    
+    <title>Contact</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 
     <header class="nav mobile-version" id="navHeader">
         <nav class="nbar">
@@ -81,41 +74,108 @@
     </header>
 
 
+    <section class="contact-section" id="contact">
 
-        <section class="hero-section">
+        <div class="design-about"><h2>CONTACT</h2></div>
 
-            <div class="content-wrapper">
-                <div class="overlay"></div>
-                
-                <div class="content">
-                    <div class="description">
-                        <h1 class="drop-in">Hi, I’m <br> John Doe.</h1>
-                        <p>Full Stack Developer / UI Designer</p>
-                    </div>
-                    <div class="s-icons">
-                        <a href=""><img src="Images/X_logo_2023_(white).png" alt="x" class="social-icons"></a>
-                        <a href=""><img src="Images/github-mark-white.png" alt="github" class="social-icons"></a>
-                    </div>
+            
+        <div class="contact-container">
+            <a href="https://www.google.com/maps/search/?api=1&query=Lagos,+Nigeria" target="_blank" class="con-act">
+                <img src="Images/location.png" alt="location" class="icon-img">
+                <h2>Address</h2>
+                <span>Lagos, Nigeria</span>
+            </a>
+        
+            <a href="mailto:komomayowa@gmail.com" class="con-act">
+                <img src="Images/mobile.png" alt="mobile" class="icon-img">
+                <h2>Contact Information</h2>
+                <span>Open 6 days a week</span>
+            </a>
+        
+            <a href="tel:+2348061244694" class="con-act">
+                <img src="Images/live-chat.png" alt="live-chat" class="icon-img">
+                <h2>Live Support</h2>
+                <span>Live chat service</span>
+            </a>
+        </div>
+
+
+        <div class="design1">
+            <div class="design2">
+                <div class="line-3"></div>
+                <div class="slanted">
+                    <div class="line-4"></div>
+                    <div class="line-5"></div>
+                    <div class="line-6"></div>
+                    <div class="line-7"></div>
+                    <div class="line-8"></div>
                 </div>
+                <div class="line-9"></div>
             </div>
+        </div>
 
-        </section>
+        <!-- Mobile Form -->
+<form action="/api/contact" method="POST" class="contact-form mobile-version">
+<div class="FRM">
+    <div class="label-names">
+        <label for="name-mobile"></label>
+        <input type="text" id="name-mobile" name="name" placeholder="ENTER YOUR NAME*" required>
+    </div>
+    <div class="label-names">
+        <label for="email-mobile"></label>
+        <input type="email" id="email-mobile" name="email" placeholder="ENTER YOUR EMAIL*" required>
+    </div>
+    <div class="label-names">
+        <label for="phone-mobile"></label>
+        <input type="tel" id="phone-mobile" name="phone" placeholder="PHONE NUMBER" required>
+    </div>
+    <div class="label-names">
+        <label for="message-mobile"></label>
+        <textarea name="message" id="message-mobile" rows="4" placeholder="YOUR MESSAGE*" required></textarea>
+    </div>
+    <button type="submit">SUBMIT</button>
+</div>
+</form>
 
-        <section class="it-container">
-
-                <div class="IT">
-                    <h1>IT BERRIES</h1>
-                    <p>Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est. Morbi commodo, eros in dignissim tempus, lacus odio rutrum augue, in semper sem magna quis tellus. Etiam enim erat, suscipit eu semper a, dictum sit amet elit. Nunc egestas nisi eget enim gravida facilisis. Pellentesque laoreet varius turpis vel pharetra. Ut ante justo, consequat vitae elementum tempor, accumsan nec eros. </p>
-                </div>
+<!-- Desktop Form -->
+<form action="/api/contact" method="POST" class="contact-form desktop-version">
+<div class="FRM">
+        <div class="label-names">
+            <label for="name-desktop"></label>
+            <input type="text" id="name-desktop" name="name" placeholder="ENTER YOUR NAME*" required>
+        </div>
+        <div class="label-names">
+            <label for="email-desktop"></label>
+            <input type="email" id="email-desktop" name="email" placeholder="ENTER YOUR EMAIL*" required>
+        </div>
+        <div class="label-names">
+            <label for="phone-desktop"></label>
+            <input type="tel" id="phone-desktop" name="phone" placeholder="PHONE NUMBER" required>
+        </div>
+    <div class="label-names">
+        <label for="message-desktop"></label>
+        <textarea name="message" id="message-desktop" rows="6" placeholder="YOUR MESSAGE*" required></textarea>
+    </div>
     
-                <div class="flex-more">
-                    <div class="line-1"></div>
-                    <a href="About.html">MORE</a>
-                    <div class="line-2"></div>
-                </div>
+    <button type="submit">SUBMIT</button>
+</div>
+</form>
 
-        </section>
 
+    </section>
+
+
+
+
+<footer>
+    <div class="footer-socials">
+        <img src="Images/icons8-email-50.png" alt="email" class="img-t social-icon">
+        <img src="Images/icons8-instagram-logo-50.png" alt="Instagram icon" class="img-t social-icon">
+    </div>
+    <div class="footer-text">
+        <p>&copy; 2025 Akomolafe Oluwamayowa. All rights reserved.</p>
+    </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
