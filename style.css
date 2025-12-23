@@ -607,7 +607,7 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 12px;
   font-family: inherit;
   font-weight: bold;
   transition: all 0.3s ease;
@@ -655,7 +655,6 @@ body {
   text-align: justify;
   justify-content: center;
   display: flex;
-  
 }
 
 .project-card:hover {
@@ -951,7 +950,7 @@ footer {
 
 @media (min-width: 520px){
   .drop-in {
-    font-size: 60px;
+    font-size: 40px;
   }
 
   .description p{
@@ -1048,7 +1047,7 @@ footer {
   }
 
   .drop-in {
-    font-size: 70px;
+    font-size: 50px;
   }
 
   .description p{
