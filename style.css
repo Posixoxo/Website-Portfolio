@@ -621,6 +621,7 @@ body {
 .project-filters button.active {
   border-bottom: 5px solid var(--text-primary);
   color: var(--taupe);
+  border-radius: 5px;
 }
 
 /* Projects Grid */
