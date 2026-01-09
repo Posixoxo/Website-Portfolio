@@ -103,30 +103,28 @@ document.addEventListener('DOMContentLoaded', () => {
             // Select all filter buttons and project cards
             const buttons = document.querySelectorAll('.project-filters button');
             const cards = document.querySelectorAll('.project-card');
-            
+
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
                     // 1. Update active button state
                     buttons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-            
-                    // Get the filter term from the button's data attribute (e.g., 'react', 'css')
-                    const filter = button.dataset.filter;
-            
-                    // 2. Loop through all project cards and apply visibility based on the filter
+
+                    const filter = button.dataset.filter.toLowerCase();
+
+                    // 2. Loop through cards
                     cards.forEach(card => {
-                        // The filtering logic checks if the card's inner HTML (which contains the tech badges) 
-                        // includes the filter term, or if the filter is set to 'all'.
-                        // NOTE: This relies on the filter name matching text inside the card (e.g., 'CSS' matching 'css' in the HTML).
-                        if (filter === 'all' || card.innerHTML.toLowerCase().includes(filter)) {
-                            card.style.display = 'block'; // Show card
+                        // Target ONLY the tech badges container
+                        const techBadges = card.querySelector('.tech-badges').innerText.toLowerCase();
+
+                        if (filter === 'all' || techBadges.includes(filter)) {
+                            card.style.display = 'block'; 
                         } else {
-                            card.style.display = 'none';  // Hide card
+                            card.style.display = 'none';
                         }
                     });
                 });
             });
-
 
 
 
