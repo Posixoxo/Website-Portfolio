@@ -43,10 +43,6 @@ links.forEach(link => {
     });
 });
 
-
-
-
-
 // About fog-item //
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -73,107 +69,89 @@ document.addEventListener('DOMContentLoaded', () => {
     itemsToAnimate.forEach(item => observer.observe(item));
   });
 
-
-
-
-  
-
 // Language scroll cloning for infinite scroll //
-        // listed items for seamless infinite scroll
-        document.querySelectorAll('.language-scroll').forEach(scroll => {
-          const direction = scroll.dataset.direction;
-          
-          // Get all direct children (language-rows or flex-textimg)
-          const children = Array.from(scroll.children);
-          
-          // Clone content 3 times total (original + 3 copies = 4x content)
-          // This ensures smooth scrolling even with large gaps
-          for (let i = 0; i < 3; i++) {
-              children.forEach(child => {
-                  const clone = child.cloneNode(true);
-                  scroll.appendChild(clone);
-              });
-          }
-      });
+document.querySelectorAll('.language-scroll').forEach(scroll => {
+    // CHECK: Only apply animation/cloning if it's NOT in the desktop-version container
+    if (scroll.closest('.desktop-version')) {
+        return; // Skip this one (Desktop)
+    }
 
-      
+    const direction = scroll.dataset.direction;
+    
+    // Get all direct children (language-rows or flex-textimg)
+    const children = Array.from(scroll.children);
+    
+    // Clone content 3 times total (original + 3 copies = 4x content)
+    for (let i = 0; i < 3; i++) {
+        children.forEach(child => {
+            const clone = child.cloneNode(true);
+            scroll.appendChild(clone);
+        });
+    }
+});
 
+// Project Filters //
+const buttons = document.querySelectorAll('.project-filters button');
+const cards = document.querySelectorAll('.project-card');
 
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        // 1. Update active button state
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
 
-            // Select all filter buttons and project cards
-            const buttons = document.querySelectorAll('.project-filters button');
-            const cards = document.querySelectorAll('.project-card');
+        const filter = button.dataset.filter.toLowerCase();
 
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // 1. Update active button state
-                    buttons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
+        // 2. Loop through cards
+        cards.forEach(card => {
+            // Target ONLY the tech badges container
+            const techBadges = card.querySelector('.tech-badges').innerText.toLowerCase();
 
-                    const filter = button.dataset.filter.toLowerCase();
-
-                    // 2. Loop through cards
-                    cards.forEach(card => {
-                        // Target ONLY the tech badges container
-                        const techBadges = card.querySelector('.tech-badges').innerText.toLowerCase();
-
-                        if (filter === 'all' || techBadges.includes(filter)) {
-                            card.style.display = 'block'; 
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-
-
-
-
-
-      // Contact form submission handling //
-
-      document.addEventListener('DOMContentLoaded', function() {
-        const forms = document.querySelectorAll('.contact-form');
-        
-        forms.forEach(form => {
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault(); // Stop normal form submission
-                
-                const formData = new FormData(this);
-                const data = {
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    message: formData.get('message')
-                };
-                
-                console.log('Submitting data:', data);
-                
-                try {
-                    const response = await fetch('/api/contact', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    });
-                    
-                    console.log('Response status:', response.status);
-                    
-                    if (response.redirected) {
-                        window.location.href = response.url;
-                    } else if (response.ok) {
-                        window.location.href = '/thankyou.html';
-                    } else {
-                        alert('Error submitting form. Please try again.');
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('Error submitting form. Please try again.');
-                }
-            });
+            if (filter === 'all' || techBadges.includes(filter)) {
+                card.style.display = 'block'; 
+            } else {
+                card.style.display = 'none';
+            }
         });
     });
-        
-        
+});
+
+// Contact form submission handling //
+document.addEventListener('DOMContentLoaded', function() {
+    const forms = document.querySelectorAll('.contact-form');
+    
+    forms.forEach(form => {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+            
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message')
+            };
+            
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.redirected) {
+                    window.location.href = response.url;
+                } else if (response.ok) {
+                    window.location.href = '/thankyou.html';
+                } else {
+                    alert('Error submitting form. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error submitting form. Please try again.');
+            }
+        });
+    });
+});
