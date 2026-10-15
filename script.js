@@ -1,4 +1,4 @@
-// hamburger and theme toggle functionality //
+// --- hamburger and theme toggle functionality ---
 
 const navHeader = document.getElementById('navHeader');
 const hamburgerIcon = document.getElementById('hamburgerIcon');
@@ -116,7 +116,7 @@ buttons.forEach(button => {
     });
 });
 
-// Contact form submission handling //
+// Contact form submission handling with Firebase Realtime Database
 document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('.contact-form');
     
@@ -124,34 +124,178 @@ document.addEventListener('DOMContentLoaded', function() {
         form.addEventListener('submit', async function(e) {
             e.preventDefault(); 
             
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'SENDING...';
+            submitBtn.disabled = true;
+
             const formData = new FormData(this);
-            const data = {
+            const contactData = {
                 name: formData.get('name'),
                 email: formData.get('email'),
                 phone: formData.get('phone'),
-                message: formData.get('message')
+                message: formData.get('message'),
+                createdAt: Date.now()
             };
             
             try {
-                const response = await fetch('/api/contact', {
+                // Direct Firebase REST push to your database
+                const dbURL = 'https://website-portfolio-c8b26-default-rtdb.firebaseio.com/contacts.json';
+                const response = await fetch(dbURL, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(contactData)
                 });
                 
-                if (response.redirected) {
-                    window.location.href = response.url;
-                } else if (response.ok) {
-                    window.location.href = '/thankyou.html';
+                if (response.ok) {
+                    window.location.href = 'index.html'; // Or success view
                 } else {
                     alert('Error submitting form. Please try again.');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
                 }
             } catch (error) {
                 console.error('Error:', error);
                 alert('Error submitting form. Please try again.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             }
         });
     });
+});
+
+
+// --- IT Berries Dynamic Shuffler & Linker with Smooth Animation ---
+document.addEventListener('DOMContentLoaded', () => {
+    const widget = document.getElementById('it-berries-widget');
+    if (!widget) return;
+
+    const categoryEl = document.getElementById('berry-category');
+    const titleEl = document.getElementById('berry-title');
+    const excerptEl = document.getElementById('berry-excerpt');
+    const bodyPreviewEl = document.getElementById('berry-body-preview');
+    const readMoreBtn = document.getElementById('berry-readmore');
+    const shuffleBtn = document.getElementById('shuffle-berry-btn');
+
+    let postsCache = [];
+    let currentPostId = null;
+    let autoRotateInterval;
+
+    // Smooth transition injection helper for widget card contents
+    function animateBerryUpdate(updateFn) {
+        widget.style.opacity = '0';
+        widget.style.transform = 'translateY(8px)';
+        widget.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
+        setTimeout(() => {
+            updateFn();
+            widget.style.opacity = '1';
+            widget.style.transform = 'translateY(0)';
+        }, 300);
+    }
+
+    // 1. Fetch posts once and store them in memory
+    async function initBerriesStream() {
+        try {
+            const dbURL = 'https://website-portfolio-c8b26-default-rtdb.firebaseio.com/posts.json';
+            const response = await fetch(dbURL);
+            const data = await response.json();
+            
+            if (data) {
+                postsCache = Object.entries(data)
+                    .map(([id, post]) => ({ id, ...post }))
+                    .filter(p => p.status === 'published');
+
+                if (postsCache.length > 0) {
+                    renderRandomBerry();
+                    startAutoRotate();
+                } else {
+                    showFallback("No Dispatches Available", "Check back later for new IT Berries transmissions.");
+                }
+            } else {
+                showFallback("Database Empty", "No published records found.");
+            }
+        } catch (err) {
+            console.error('Database connection error:', err);
+            showFallback("Stream Offline", "Unable to load database records.");
+        }
+    }
+
+    function showFallback(title, message) {
+        if (titleEl) titleEl.textContent = title;
+        if (excerptEl) excerptEl.textContent = message;
+        if (bodyPreviewEl) bodyPreviewEl.textContent = "";
+        if (readMoreBtn) readMoreBtn.style.display = 'none';
+    }
+
+    // 2. Render instantly from local memory cache with smooth transition
+    function renderRandomBerry(isManual = false) {
+        if (!postsCache || postsCache.length === 0) return;
+        
+        const updateContent = () => {
+            const randomIndex = Math.floor(Math.random() * postsCache.length);
+            const post = postsCache[randomIndex];
+
+            currentPostId = post.id;
+            if (categoryEl) categoryEl.textContent = `// ${post.category.toUpperCase()}`;
+            if (titleEl) titleEl.textContent = post.title;
+            if (excerptEl) excerptEl.textContent = post.excerpt || "No summary provided.";
+            if (bodyPreviewEl) {
+                bodyPreviewEl.textContent = post.content.length > 350 ? post.content.substring(0, 350) + '...' : post.content;
+            }
+            
+            if (readMoreBtn) {
+                readMoreBtn.style.display = 'inline-block';
+                readMoreBtn.href = `stories.html?id=${post.id}`;
+            }
+        };
+
+        if (isManual) {
+            animateBerryUpdate(updateContent);
+        } else {
+            updateContent();
+        }
+    }
+
+    // 3. Instant Shuffle Button Handler with Smooth Animation
+    if (shuffleBtn) {
+        shuffleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            if (postsCache.length === 0) {
+                alert("Cache empty. No posts to shuffle yet.");
+                return;
+            }
+
+            // Visual feedback state
+            shuffleBtn.textContent = 'SHUFFLING...';
+            shuffleBtn.style.opacity = '0.6';
+            shuffleBtn.style.pointerEvents = 'none';
+
+            renderRandomBerry(true);
+            resetAutoRotate();
+
+            // Restore button state after animation finishes
+            setTimeout(() => {
+                shuffleBtn.textContent = 'Shuffle Next Berry ↻';
+                shuffleBtn.style.opacity = '1';
+                shuffleBtn.style.pointerEvents = 'auto';
+            }, 400);
+        });
+    }
+
+    // 4. Automatic 3-Minute Shuffler
+    function startAutoRotate() {
+        clearInterval(autoRotateInterval);
+        autoRotateInterval = setInterval(() => {
+            renderRandomBerry(true); // Smooth auto-rotation animation
+        }, 180000); // 180,000 ms = 3 minutes
+    }
+
+    function resetAutoRotate() {
+        startAutoRotate();
+    }
+
+    // Initialize stream on load
+    initBerriesStream();
 });

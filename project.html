@@ -15,7 +15,6 @@
     
     <header class="nav mobile-version" id="navHeader">
         <nav class="nbar">
-
             <div class="nav-header">
                 <img src="Images/icon-hamburger.svg" alt="hamburger" class="icon-hamburger" id="hamburgerIcon">
                 <img src="Images/icon-close.svg" alt="close" class="icon-close" id="closeIcon">
@@ -43,19 +42,20 @@
                 <a href="project.html">Projects</a>
                 <a href="About.html">About</a>
                 <a href="contact.html">Contact</a>
+                <a href="admin.html">[ADMIN ACCESS]</a>
             </div>
         </nav>
     </header>
 
-
     <header class="desktop-version">
-
         <nav class="nav3">
             <div class="nav-links1">
                 <a href="index.html">Home</a>
                 <a href="project.html">Projects</a>
                 <a href="About.html">About</a>
                 <a href="contact.html" class="cont">Contact</a>
+                <a href="admin.html" style="color: var(--text-accent); font-size: 12px; letter-spacing: 1px;">[ADMIN]</a>
+
             </div>
 
             <button class="theme-toggle" aria-label="Toggle theme">
@@ -75,322 +75,350 @@
                 </svg>
             </button>
         </nav>
-
     </header>
 
+    <section class="projects-page">
 
+        <div class="project-backg">
+            <div class="design-about2"><h2>PORTFOLIO</h2></div>
+            <p>A collection of my web development work.</p>
+        </div>
 
-        <section class="projects-page">
+        <div class="project-filters">
+            <div class="flex-filters1">
+                <button data-filter="all" class="active" type="button">All</button>
+                <button data-filter="html" type="button">Html</button>
+            </div>
+            <div class="flex-filters2">
+                <button data-filter="javascript" type="button">JavaScript</button>
+                <button data-filter="css" type="button">CSS</button>
+            </div>
+            <button data-filter="react" type="button">React</button>
+        </div>
 
-            <div class="project-backg">
-                <div class="design-about2"><h2>PORTFOLIO</h2></div>
-                <p>A collection of my recent web development work.</p>
+        <div class="projects-grid">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card" data-tech="css javascript">
+                <div class="card-inner">
+                    <div class="card-header-top">
+                        <span class="project-number">01</span>
+                        <div class="tech-badges">
+                            <span>CSS</span>
+                            <span>JAVASCRIPT</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-text-block">
+                        <h3 class="project-title">Weather Forecast App</h3>
+                        <p class="project-desc">A responsive weather application that provides current conditions, 7-day forecasts, and hourly forecasts using the Open-Meteo API.</p>
+                    </div>
+
+                    <div class="card-visual-wrapper">
+                        <div class="color-splash"></div>
+                        <img src="Images/desktop-design-imperial.jpg" alt="Weather Forecast App" class="img-project">
+                    </div>
+
+                    <div class="links">
+                        <a href="https://github.com/Posixoxo/Weather-Forecast-App" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>GITHUB</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                        <a href="https://weather-forecast-app-iota-drab.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>LIVE DEMO</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="project-filters">
-                <div class="flex-filters1">
-                    <button data-filter="all" class="active" type="button">All</button>
-                    <button data-filter="html" type="button">Html</button>
+            <!-- PROJECT 2 -->
+            <div class="project-card" data-tech="css javascript">
+                <div class="card-inner">
+                    <div class="card-header-top">
+                        <span class="project-number">02</span>
+                        <div class="tech-badges">
+                            <span>CSS</span>
+                            <span>JAVASCRIPT</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-text-block">
+                        <h3 class="project-title">Multi-Step Form</h3>
+                        <p class="project-desc">A subscription payment form integrated with Paystack API, featuring multiple steps for a smooth transaction process.</p>
+                    </div>
+
+                    <div class="card-visual-wrapper">
+                        <div class="color-splash"></div>
+                        <img src="Images/desktop-design-step-1.jpg" alt="Multi-Step Form" class="img-project">
+                    </div>
+
+                    <div class="links">
+                        <a href="https://github.com/Posixoxo/Multi-Step-Form/tree/main" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>GITHUB</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                        <a href="https://multi-step-form-five-flame-12.vercel.app/index.html" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>LIVE DEMO</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="flex-filters2">
-                    <button data-filter="javascript" type="button">JavaScript</button>
-                    <button data-filter="css" type="button">CSS</button>
-                </div>
-                <button data-filter="react" type="button">React</button>
             </div>
 
-            
-              <div class="projects-grid">
-
-
-
-                <div class="project-card">
-                    <img src="Images/desktop-design-imperial.jpg" alt="Links project" class="img-project">
-                    <h3>Weather Forecast App</h3>
-                    <p>A responsive weather application that provides current conditions, 7-day forecasts, and hourly forecasts using the Open-Meteo API.</p>
-    
-                    <div class="tech-badges">
-                      <span>CSS</span>
-                      <span>JAVASCRIPT</span>
+            <!-- PROJECT 3 -->
+            <div class="project-card" data-tech="html javascript">
+                <div class="card-inner">
+                    <div class="card-header-top">
+                        <span class="project-number">03</span>
+                        <div class="tech-badges">
+                            <span>HTML</span>
+                            <span>JAVASCRIPT</span>
+                        </div>
                     </div>
-    
-                    <div class="links">
-                      
-                      <a href="https://github.com/Posixoxo/Weather-Forecast-App" target="_blank" rel="noopener noreferrer">
-                          <div class="flex-more3">
-                              <div class="line-10"></div>
-                              <p>GITHUB</p>
-                              <div class="line-11"></div>
-                          </div>
-                      </a>
-  
-  
-                      <a href="https://weather-forecast-app-iota-drab.vercel.app/" target="_blank" rel="noopener noreferrer">
-                          <div class="flex-more3">
-                              <div class="line-10"></div>
-                              <p>LIVE DEMO</p>
-                              <div class="line-11"></div>
-                          </div>
-                      </a>
-  
-                    </div>
-  
-                  </div>
-
-
-
-
-                <div class="project-card">
-                  <img src="Images/desktop-design-step-1.jpg" alt="Links project" class="img-project">
-                  <h3>Multi-Step Form</h3>
-                  <p>A subscription payment form integrated with Paystack API, featuring multiple steps for a smooth transaction process.</p>
-  
-                  <div class="tech-badges">
-                    <span>CSS</span>
-                    <span>JAVASCRIPT</span>
-                  </div>
-  
-                  <div class="links">
                     
-                    <a href="https://github.com/Posixoxo/Multi-Step-Form/tree/main" target="_blank" rel="noopener noreferrer">
-                        <div class="flex-more3">
-                            <div class="line-10"></div>
-                            <p>GITHUB</p>
-                            <div class="line-11"></div>
-                        </div>
-                    </a>
-
-
-                    <a href="https://multi-step-form-five-flame-12.vercel.app/index.html" target="_blank" rel="noopener noreferrer">
-                        <div class="flex-more3">
-                            <div class="line-10"></div>
-                            <p>LIVE DEMO</p>
-                            <div class="line-11"></div>
-                        </div>
-                    </a>
-
-                  </div>
-
-                </div>
-
-
-
-                <div class="project-card">
-                  <img src="Images/preview.jpg" alt="Links project" class="img-project">
-                  <h3>Rock, Paper, Scissors(Lizard, Spock)</h3>
-                  <p>Rock, Paper, Scissors(Bonus: Lizard, Spock).. with a chat system.</p>
-  
-                  <div class="tech-badges">
-                    <span>HTML</span>
-                    <span>JAVASCRIPT</span>
-                  </div>
-  
-                  <div class="links">
-                    
-                    <a href="https://github.com/Posixoxo/Rock-Paper-Scissors-Lizard-Spock-" target="_blank" rel="noopener noreferrer">
-                        <div class="flex-more3">
-                            <div class="line-10"></div>
-                            <p>GITHUB</p>
-                            <div class="line-11"></div>
-                        </div>
-                    </a>
-
-
-                    <a href="https://rock-paper-scissors-lizard-spockkk.netlify.app/" target="_blank" rel="noopener noreferrer">
-                        <div class="flex-more3">
-                            <div class="line-10"></div>
-                            <p>LIVE DEMO</p>
-                            <div class="line-11"></div>
-                        </div>
-                    </a>
-
-                  </div>
-
-                </div>
-
-
-
-
-                <div class="project-card">
-                  <img src="Images/Rest countries API.jpg" alt="Links project" class="img-project">
-                  <h3>Rest Countries With API</h3>
-                  <p>Browsing Countries Details.</p>
-  
-                  <div class="tech-badges">
-                    <span>CSS</span>
-                    <span>JAVASCRIPT</span>
-                  </div>
-  
-                  <div class="links">
-                    
-                    <a href="https://github.com/Posixoxo/Rest-Countries-API" target="_blank" rel="noopener noreferrer">
-                        <div class="flex-more3">
-                            <div class="line-10"></div>
-                            <p>GITHUB</p>
-                            <div class="line-11"></div>
-                        </div>
-                    </a>
-
-
-                    <a href="https://rest-countriesss-api.netlify.app/" target="_blank" rel="noopener noreferrer">
-                        <div class="flex-more3">
-                            <div class="line-10"></div>
-                            <p>LIVE DEMO</p>
-                            <div class="line-11"></div>
-                        </div>
-                    </a>
-
-                  </div>
-
-                </div>
-
-
-
-
-
-                <div class="project-card">
-                    <img src="Images/Space Detour.jpg" alt="Links project" class="img-project">
-                    <h3>Space Tourism Website</h3>
-                    <p>Take a detour to space.</p>
-    
-                    <div class="tech-badges">
-                      <span>CSS</span>
-                      <span>REACT</span>
+                    <div class="card-text-block">
+                        <h3 class="project-title">Rock, Paper, Scissors (Lizard, Spock)</h3>
+                        <p class="project-desc">Rock, Paper, Scissors (Bonus: Lizard, Spock) with a built-in real-time chat system.</p>
                     </div>
-    
+
+                    <div class="card-visual-wrapper">
+                        <div class="color-splash"></div>
+                        <img src="Images/preview.jpg" alt="Rock Paper Scissors" class="img-project">
+                    </div>
+
                     <div class="links">
-                      
-                      <a href="https://github.com/Posixoxo/Space-website-React" target="_blank" rel="noopener noreferrer">
-                          <div class="flex-more3">
-                              <div class="line-10"></div>
-                              <p>GITHUB</p>
-                              <div class="line-11"></div>
-                          </div>
-                      </a>
-  
-  
-                      <a href="https://space-website-react-eta.vercel.app/" target="_blank" rel="noopener noreferrer">
-                          <div class="flex-more3">
-                              <div class="line-10"></div>
-                              <p>LIVE DEMO</p>
-                              <div class="line-11"></div>
-                          </div>
-                      </a>
-  
+                        <a href="https://github.com/Posixoxo/Rock-Paper-Scissors-Lizard-Spock-" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>GITHUB</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                        <a href="https://rock-paper-scissors-lizard-spockkk.netlify.app/" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>LIVE DEMO</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
                     </div>
-  
-                  </div>
-
-
-
-                  <div class="project-card">
-                    <img src="Images/desktop-design.jpg" alt="Links project" class="img-project">
-                    <h3>E-commerce Page</h3>
-                    <p>Product description, price, and cart for e-commerce landing page.</p>
-    
-                    <div class="tech-badges">
-                      <span>CSS</span>
-                      <span>JAVASCRIPT</span>
-                    </div>
-    
-                    <div class="links">
-                      
-                      <a href="https://github.com/Posixoxo/E-commerce-page" target="_blank" rel="noopener noreferrer">
-                          <div class="flex-more3">
-                              <div class="line-10"></div>
-                              <p>GITHUB</p>
-                              <div class="line-11"></div>
-                          </div>
-                      </a>
-  
-  
-                      <a href="https://e-commerce-page-ivory.vercel.app/" target="_blank" rel="noopener noreferrer">
-                          <div class="flex-more3">
-                              <div class="line-10"></div>
-                              <p>LIVE DEMO</p>
-                              <div class="line-11"></div>
-                          </div>
-                      </a>
-  
-                    </div>
-  
-                  </div>
-
-
-
-                  <div class="project-card">
-                    <img src="Images/desktop-design-dark.jpg" alt="Links project" class="img-project">
-                    <h3>Todo Web App</h3>
-                    <p>Scheduling Your Day.</p>
-    
-                    <div class="tech-badges">
-                      <span>CSS</span>
-                      <span>REACT</span>
-                    </div>
-    
-                    <div class="links">
-                      
-                      <a href="https://github.com/Posixoxo/TODO-React/tree/main" target="_blank" rel="noopener noreferrer">
-                          <div class="flex-more3">
-                              <div class="line-10"></div>
-                              <p>GITHUB</p>
-                              <div class="line-11"></div>
-                          </div>
-                      </a>
-  
-  
-                      <a href="https://todo-react-nine-tan.vercel.app/" target="_blank" rel="noopener noreferrer">
-                          <div class="flex-more3">
-                              <div class="line-10"></div>
-                              <p>LIVE DEMO</p>
-                              <div class="line-11"></div>
-                          </div>
-                      </a>
-  
-                    </div>
-  
-                  </div>
-
-
-
-                  <div class="project-card">
-                  <img src="Images/Website Portfolio.png" alt="Links project" class="img-project">
-                  <h3>Website Portfolio</h3>
-                  <p>A clean and responsive website portfolio.</p>
-  
-                  <div class="tech-badges">
-                    <span>CSS</span>
-                    <span>HTML</span>
-                  </div>
-  
-                  <div class="links">
-                    
-                    <a href="https://github.com/Posixoxo/Website-Portfolio" target="_blank" rel="noopener noreferrer">
-                        <div class="flex-more3">
-                            <div class="line-10"></div>
-                            <p>GITHUB</p>
-                            <div class="line-11"></div>
-                        </div>
-                    </a>
-
-
-                    <a href="https://website-portfolio-coral-two.vercel.app/index.html" target="_blank" rel="noopener noreferrer">
-                        <div class="flex-more3">
-                            <div class="line-10"></div>
-                            <p>LIVE DEMO</p>
-                            <div class="line-11"></div>
-                        </div>
-                    </a>
-
-                  </div>
-
                 </div>
+            </div>
 
+            <!-- PROJECT 4 -->
+            <div class="project-card" data-tech="css javascript">
+                <div class="card-inner">
+                    <div class="card-header-top">
+                        <span class="project-number">04</span>
+                        <div class="tech-badges">
+                            <span>CSS</span>
+                            <span>JAVASCRIPT</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-text-block">
+                        <h3 class="project-title">Rest Countries With API</h3>
+                        <p class="project-desc">Interactive application for browsing detailed country data, regional filters, and border statistics.</p>
+                    </div>
 
+                    <div class="card-visual-wrapper">
+                        <div class="color-splash"></div>
+                        <img src="Images/Rest countries API.jpg" alt="Rest Countries API" class="img-project">
+                    </div>
 
+                    <div class="links">
+                        <a href="https://github.com/Posixoxo/Rest-Countries-API" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>GITHUB</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                        <a href="https://rest-countriesss-api.netlify.app/" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>LIVE DEMO</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-              </div>
+            <!-- PROJECT 5 -->
+            <div class="project-card" data-tech="css react">
+                <div class="card-inner">
+                    <div class="card-header-top">
+                        <span class="project-number">05</span>
+                        <div class="tech-badges">
+                            <span>CSS</span>
+                            <span>REACT</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-text-block">
+                        <h3 class="project-title">Space Tourism Website</h3>
+                        <p class="project-desc">Take a scenic detour to space with multi-page destination navigation built in React.</p>
+                    </div>
 
+                    <div class="card-visual-wrapper">
+                        <div class="color-splash"></div>
+                        <img src="Images/Space Detour.jpg" alt="Space Tourism Website" class="img-project">
+                    </div>
+
+                    <div class="links">
+                        <a href="https://github.com/Posixoxo/Space-website-React" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>GITHUB</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                        <a href="https://space-website-react-eta.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>LIVE DEMO</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 6 -->
+            <div class="project-card" data-tech="css javascript">
+                <div class="card-inner">
+                    <div class="card-header-top">
+                        <span class="project-number">06</span>
+                        <div class="tech-badges">
+                            <span>CSS</span>
+                            <span>JAVASCRIPT</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-text-block">
+                        <h3 class="project-title">E-commerce Page</h3>
+                        <p class="project-desc">Product description, dynamic pricing, and shopping cart functionality for an e-commerce landing page.</p>
+                    </div>
+
+                    <div class="card-visual-wrapper">
+                        <div class="color-splash"></div>
+                        <img src="Images/desktop-design.jpg" alt="E-commerce Page" class="img-project">
+                    </div>
+
+                    <div class="links">
+                        <a href="https://github.com/Posixoxo/E-commerce-page" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>GITHUB</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                        <a href="https://e-commerce-page-ivory.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>LIVE DEMO</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 7 -->
+            <div class="project-card" data-tech="css react">
+                <div class="card-inner">
+                    <div class="card-header-top">
+                        <span class="project-number">07</span>
+                        <div class="tech-badges">
+                            <span>CSS</span>
+                            <span>REACT</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-text-block">
+                        <h3 class="project-title">Todo Web App</h3>
+                        <p class="project-desc">An interactive productivity application designed for scheduling and organizing your day effectively.</p>
+                    </div>
+
+                    <div class="card-visual-wrapper">
+                        <div class="color-splash"></div>
+                        <img src="Images/desktop-design-dark.jpg" alt="Todo Web App" class="img-project">
+                    </div>
+
+                    <div class="links">
+                        <a href="https://github.com/Posixoxo/TODO-React/tree/main" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>GITHUB</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                        <a href="https://todo-react-nine-tan.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>LIVE DEMO</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 8 -->
+            <div class="project-card" data-tech="css html">
+                <div class="card-inner">
+                    <div class="card-header-top">
+                        <span class="project-number">08</span>
+                        <div class="tech-badges">
+                            <span>CSS</span>
+                            <span>HTML</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-text-block">
+                        <h3 class="project-title">Website Portfolio</h3>
+                        <p class="project-desc">A clean, responsive personal website portfolio showcasing web development and design projects.</p>
+                    </div>
+
+                    <div class="card-visual-wrapper">
+                        <div class="color-splash"></div>
+                        <img src="Images/Website Portfolio.png" alt="Website Portfolio" class="img-project">
+                    </div>
+
+                    <div class="links">
+                        <a href="https://github.com/Posixoxo/Website-Portfolio" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>GITHUB</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                        <a href="https://website-portfolio-coral-two.vercel.app/index.html" target="_blank" rel="noopener noreferrer">
+                            <div class="flex-more3">
+                                <div class="line-10"></div>
+                                <p>LIVE DEMO</p>
+                                <div class="line-11"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
         <a href="contact.html">
             <div class="it-container">
@@ -402,7 +430,7 @@
             </div>
         </a>
 
-        </section>
+    </section>
 
 <script src="script.js"></script>
 </body>

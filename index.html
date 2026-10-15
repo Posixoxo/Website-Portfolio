@@ -45,6 +45,7 @@
                 <a href="project.html">Projects</a>
                 <a href="About.html">About</a>
                 <a href="contact.html">Contact</a>
+                <a href="admin.html">[ADMIN ACCESS]</a>
             </div>
         </nav>
     </header>
@@ -58,6 +59,7 @@
                 <a href="project.html">Projects</a>
                 <a href="About.html">About</a>
                 <a href="contact.html" class="cont">Contact</a>
+                <a href="admin.html" style="color: var(--text-accent); font-size: 12px; letter-spacing: 1px;">[ADMIN]</a>
             </div>
 
             <button class="theme-toggle" aria-label="Toggle theme">
@@ -102,21 +104,25 @@
         </section>
 
         <section class="it-container">
-
-                <div class="IT">
-                    <h1>IT BERRIES</h1>
-                    <p>When you first start coding, the real boss fight isn’t bugs or logic errors… it’s your eyes. Yeah, your eyesight takes a hit faster than your first infinite loop.</p>
-                    <p>After a couple of months staring at screens, media queries start feeling like some sadistic puzzle game. Aligning widths, heights, paddings… it’s like playing Where’s Waldo but in pixels.</p>
-                    <p>Some people grab glasses like a shield against this digital apocalypse. Others… me included… prefer the natural sunlight route—let the sun roast the water out of your eyes for “eye optimization.”</p>
-                    <p>Glasses make you look like a nerd, and yeah, some of us are allergic to that vibe. But hey, that’s the price we pay for code perfection… and the occasional headache.</p>
+            <div class="it-berry-card" id="it-berries-widget">
+                <div class="it-berry-header">
+                    <span id="berry-category">// IT BERRIES</span>
+                    <span id="berry-timestamp">SYSTEM_LOG</span>
                 </div>
-    
-                <div class="flex-more">
-                    <div class="line-1"></div>
-                    <a href="About.html">MORE</a>
-                    <div class="line-2"></div>
+                
+                <h2 id="berry-title">Loading Dispatch...</h2>
+                <p id="berry-excerpt">Fetching live database stream...</p>
+                
+                <!-- Additional Preview Text Box Area -->
+                <div class="it-berry-preview-box">
+                    <p id="berry-body-preview">Preview body content will stream here...</p>
                 </div>
 
+                <div class="it-berry-footer">
+                    <a href="#" id="berry-readmore" class="read-more-btn">Read Full Post &rarr;</a>
+                    <button id="shuffle-berry-btn" type="button" class="shuffle-action-btn">Shuffle Next Berry ↻</button>
+                </div>
+            </div>
         </section>
 
 

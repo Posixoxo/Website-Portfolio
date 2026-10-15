@@ -3,6 +3,8 @@
   --walnut: #592816;
   --taupe: #cca097;
   --offwhite: #f5f3f1;
+  --yellow: #E5A93C;
+  --white: #ffffff;
 }
 
 /* Dark Mode (default) */
@@ -13,6 +15,7 @@
   --text-primary: var(--offwhite);
   --text-secondary: #cccccc;
   --text-accent: var(--taupe);
+  --button-primary: var(--offwhite);
 }
 
 /* Light Mode */
@@ -21,8 +24,9 @@
   --bg-secondary: #d4b5ad; /* Lightened taupe */
   --surface: #ffffff;
   --text-primary: var(--onyx);
-  --text-secondary: var(--walnut);
-  --text-accent: var(--walnut);
+  --text-secondary: var(--white);
+  --text-accent: var(--yellow);
+  --button-primary: var(--yellow);
 }
 
 body {
@@ -168,7 +172,7 @@ body {
 }
 
 .nav-links a:hover {
-  background-color: var(--text-accent);
+  background-color: var(--offwhite);
   color: var(--surface);
 }
 
@@ -271,14 +275,130 @@ body {
   margin: 70px 20px 0 20px;
 }
 
-.IT{
-  text-align: center;
+/* Stylish Backend IT Berries Widget Container */
+.it-berry-card {
+    background: linear-gradient(145deg, #16100d 0%, #0d0a08 100%);
+    border: 1px solid rgba(204, 160, 151, 0.2);
+    border-radius: 16px;
+    padding: 35px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    position: relative;
 }
 
-.IT p{
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: none;
+.it-berry-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text-accent);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding-bottom: 10px;
+}
+
+#berry-title {
+    font-size: 1.5rem;
+    color: var(--offwhite);
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+#berry-excerpt {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    max-height: 280px; /* Equivalent to roughly 15 lines */
+    overflow: hidden;
+    text-align: left;
+}
+
+.it-berry-preview-box {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--text-accent);
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+}
+
+#berry-body-preview {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+    max-height: 180px; /* ~10-15 lines preview */
+    overflow: hidden;
+    text-align: left;
+}
+
+.it-berry-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+}
+
+.read-more-btn {
+    color: var(--text-accent);
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 375px) {
+  .read-more-btn {
+    font-size: 7px;
+  }
+}
+
+@media (min-width: 425px) {
+  .read-more-btn {
+    font-size: 10px;
+  }
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
+.shuffle-action-btn {
+    background: transparent;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: transparent;
+    border-bottom: transparent;
+    color: var(--button-primary);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+@media (max-width: 375px) {
+  .shuffle-action-btn {
+    font-size: 7px;
+  }
+}
+
+@media (min-width: 425px) {
+  .shuffle-action-btn {
+    font-size: 10px;
+  }
+}
+
+.shuffle-action-btn:hover {
+    border-color: var(--text-accent);
+    color: var(--text-accent);
 }
 
 .flex-more{
@@ -537,217 +657,374 @@ a{
 }
 
 
-/* PROJECTS PAGE STYLES (project.html) */
+/* --- BESPOKE EDITORIAL PROJECTS SECTION --- */
 
-.project-backg{
-  background-image: url('Images/p-backg.jpg'); 
-  background-size: cover; 
-  width: 100%; 
-  background-position: center; 
-  color: #EAEAEA; 
-  display: flex; 
-  flex-direction: column; 
-  padding: 20px 0;
-  text-align:center
+.projects-page {
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  padding-top: 100px; /* Provides top offset so header doesn't overlap */
+  padding-bottom: 80px;
 }
 
-.project-backg p{
-  text-align: center;
-  font-size: 15px;
-  color: var(--offwhite);
-  line-height: 1.5;
+/* Ensure mobile header offset is clear */
+@media (max-width: 1023px) {
+  .projects-page {
+    padding-top: 110px;
+  }
 }
 
-.design-about2{
-  border: 8px solid var(--offwhite);
-  border-radius: 5px;
-  width: 160px;
-  height: 50px;
-  display: flex;
+.project-backg {
   justify-content: center;
-  justify-items: center;
-  align-items: center;
-  margin: 70px auto 10px auto;
-}
-
-.design-about2 h2{
   text-align: center;
-  font-size: 15px;
-  text-transform: uppercase;
-  color: var(--offwhite);
-  letter-spacing: 5px;
 }
 
+/* --- 1. PORTFOLIO Banner Corner Splashes --- */
 
+.design-about2 {
+  position: relative;
+  border: none; /* Removed the outer box border */
+  background: transparent;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  margin: 30px auto 20px auto;
+  padding: 10px 25px;
+  text-align: center;
+}
 
-/* Project Filters */
+.design-about2 h2 {
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  letter-spacing: 6px;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Top-Left Edge: Double Paint Splashes (Mustard & Terracotta) --- */
+.design-about2::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -8px;
+  width: 22px;
+  height: 22px;
+  background-color: #E5A93C; /* Primary Mustard Splash */
+  z-index: 1;
+  /* Organic fluid splash shape using rounded border-radius variations */
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  /* Creates the second smaller drop splash directly adjacent */
+  box-shadow: -10px 6px 0 -3px #9E2A2B, -4px -8px 0 -4px #E5A93C;
+  transform: rotate(-12deg);
+}
+
+/* --- Bottom-Right Edge: Double Paint Splashes (Crimson & Mustard) --- */
+.design-about2::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  background-color: #9E2A2B; /* Primary Crimson Splash */
+  z-index: 1;
+  /* Organic fluid splash shape */
+  border-radius: 60% 40% 30% 70% / 50% 60% 40% 60%;
+  /* Creates the second smaller drop splash directly adjacent */
+  box-shadow: 10px -6px 0 -3px #E5A93C, 5px 8px 0 -4px #9E2A2B;
+  transform: rotate(15deg);
+}
+
+/* Project Filters Styling */
 .project-filters {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
   align-items: center;
-  margin: 30px 20px;
-
+  margin: 60px 20px;
 }
 
-.flex-filters1{
+.flex-filters1, .flex-filters2 {
   display: flex;
   flex-direction: row;
-  gap: 10px;
-}
-
-.flex-filters2{
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
+  gap: 12px;
 }
 
 .project-filters button {
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   width: 140px;
-  height: 50px;
-  border-bottom: 2px solid var(--text-accent);
+  height: 46px;
+  border-radius: 8px;
   color: var(--text-primary);
-  background-color: var(--bg-primary);
+  background-color: var(--surface);
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
   font-family: inherit;
-  font-weight: bold;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .project-filters button:hover {
-  border-bottom: 2px solid var(--bg-secondary);
-  color: var(--text-accent);
+  border-color: var(--text-accent);
+  color: var(--button-primary);
+  transform: translateY(-2px);
 }
 
 .project-filters button.active {
-  border-bottom: 5px solid var(--text-primary);
-  color: var(--taupe);
-  border-radius: 5px;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
 }
 
-/* Projects Grid */
+/* Projects Grid with 3D Perspective */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
   max-width: 1200px;
-  margin: 90px auto 30px auto;
+  margin: 60px auto 40px auto;
+  padding: 0 20px;
+  perspective: 1600px;
 }
 
+/* --- The Dark Brown Artistic Project Card --- */
 .project-card {
-  background: var(--bg-primary);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: transform 0.3s;
-  text-align: left;
-  margin: 0 auto 50px auto;
-  color: var(--text-primary); 
-}
-
-.project-card h3 {
-  color: var(--text-secondary);
-  text-align: center; 
-}
-
-.project-card p {
-  font-size: 14px;
-  line-height: 1.4;
-  text-align: justify;
-  justify-content: center;
-  display: flex;
+  position: relative;
+  background: linear-gradient(145deg, #2b1b17 0%, #1c110e 100%); /* Rich deep dark brown */
+  border: 1px solid rgba(204, 160, 151, 0.15);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  border-color: rgba(204, 160, 151, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
+              0 0 25px rgba(204, 160, 151, 0.1);
 }
 
-.project-card img {
+.card-inner {
+  position: relative;
+  z-index: 2;
   display: flex;
-  margin: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  flex-direction: column;
+  height: 100%;
 }
 
-.img-project{
-  width: 60%; 
-  max-width: 100%;
-  height: auto;
+/* Card Header Top: Number & Badges */
+.card-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  transform: translateZ(20px);
+}
+
+.project-number {
+  font-family: serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #cca097; /* Accent taupe tone */
+  opacity: 0.8;
 }
 
 .tech-badges {
-  margin: 10px 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .tech-badges span {
-  display: inline-block;
-  background: #eee;
-  color: #333;
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f5f3f1;
+  border-radius: 6px;
   padding: 3px 8px;
-  font-size: 12px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
+/* Restructured Text Hierarchy */
+.card-text-block {
+  margin-bottom: 25px;
+  transform: translateZ(25px);
+}
+
+/* --- ARTISTIC TOUCH 1: Title Highlight Paint Splash --- */
+.project-title {
+  position: relative;
+  display: inline-block;
+  color: #f5f3f1;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+  z-index: 2;
+}
+
+/* Vibrant artistic highlight swatch behind title */
+.project-title::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: -4px;
+  width: 102%;
+  height: 8px;
+  background-color: #E5A93C; /* Solid Mustard Yellow */
+  opacity: 0.85;
+  border-radius: 2px;
+  z-index: -1;
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card:hover .project-title::after {
+  opacity: 1;
+  transform: rotate(0deg) scaleX(1.04);
+}
+
+.project-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #d1c5c1;
+  margin: 0;
+  text-align: left;
+}
+
+/* --- Compact Image Container with Artistic Color Splashes --- */
+.card-visual-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(35px);
+}
+
+/* Vibrant Artistic Color Splash Behind Image */
+.color-splash {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.35) 0%, rgba(78, 205, 196, 0.25) 50%, rgba(255, 230, 109, 0.15) 100%);
+  filter: blur(35px);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover .color-splash {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Compact Image Styling */
+.img-project {
+  position: relative;
+  z-index: 2;
+  width: 75%; /* Makes the image compact as requested */
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .img-project {
+  transform: scale(1.03);
+}
+
+/* --- ARTISTIC TOUCH 2: Colorful Edges on GITHUB / LIVE DEMO --- */
 .links {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  transform: translateZ(30px);
 }
 
 .links a {
   text-decoration: none;
-  text-decoration: none;
   margin: 0;
-  padding-top: 5px;
-  color: var(--text-primary);
+  color: #f5f3f1;
   font-weight: bold;
   transition: color 0.3s;
   cursor: pointer;
 }
 
 .links a:hover {
-  color: var(--text-accent);
+  color: #cca097;
 }
 
-.flex-more3{
+.flex-more3 {
+  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.flex-more3 p {
+  margin: 0;
+  padding: 0;
+  color: #f5f3f1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Vibrant edge splashes for action buttons */
+.links a:nth-child(1) .flex-more3 {
+  border-left: 4px solid #E5A93C; /* Solid Mustard left border */
+  box-shadow: -4px 0 12px rgba(229, 169, 60, 0.15);
+}
+
+.links a:nth-child(2) .flex-more3 {
+  border-right: 4px solid #9E2A2B; /* Solid Crimson right border */
+  box-shadow: 4px 0 12px rgba(158, 42, 43, 0.15);
+}
+
+.flex-more3:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.line-10, .line-11 {
+  display: none; /* Replaced by sleek color-bordered badges */
+}
+
+.line-10 {
+  border-left: 2px solid #cca097;
+  width: 12px;
+  height: 12px;
   margin: 0;
   padding: 0;
 }
 
-.flex-more3 p{
-  margin: 0;
-  padding: 5px 0 0 0;
-  color: var(--text-accent);
-}
-
-.line-10{
-  border-left: 3px solid var(--text-primary);
-  width: 30px;
-  height: 30px;
-  margin: 0;
-  padding: 0;
-}
-
-.line-11{
-  border-right: 3px solid var(--text-primary);
-  width: 30px;
-  height: 30px;
+.line-11 {
+  border-right: 2px solid #cca097;
+  width: 12px;
+  height: 12px;
   margin: 0;
   padding: 0;
 }
