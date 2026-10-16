@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 if (response.ok) {
-                    window.location.href = 'index.html'; // Or success view
+                    window.location.href = 'thankyou.html'; // Or success view
                 } else {
                     alert('Error submitting form. Please try again.');
                     submitBtn.textContent = originalText;
