@@ -1109,6 +1109,7 @@ a{
   margin-bottom: 15px;
   width: 80%;
   max-width: 320px;
+  resize: none;
   
   /* Use theme surface or card background so inputs stand out nicely in dark mode */
   background-color: var(--surface, #16100d);

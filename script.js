@@ -228,13 +228,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (readMoreBtn) readMoreBtn.style.display = 'none';
     }
 
-    // 2. Render instantly from local memory cache with smooth transition
+    // 2. Render instantly from local memory cache with smooth transition and true randomness
     function renderRandomBerry(isManual = false) {
         if (!postsCache || postsCache.length === 0) return;
         
         const updateContent = () => {
-            const randomIndex = Math.floor(Math.random() * postsCache.length);
-            const post = postsCache[randomIndex];
+            // Filter out the currently displayed post if there's more than 1 post, preventing immediate repeats
+            let availablePosts = postsCache;
+            if (postsCache.length > 1 && currentPostId) {
+                availablePosts = postsCache.filter(p => p.id !== currentPostId);
+            }
+
+            const randomIndex = Math.floor(Math.random() * availablePosts.length);
+            const post = availablePosts[randomIndex];
 
             currentPostId = post.id;
             if (categoryEl) categoryEl.textContent = `// ${post.category.toUpperCase()}`;
@@ -284,12 +290,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Automatic 3-Minute Shuffler
+    // 4. Automatic 1-Minute-30-Seconds Shuffler (90,000 ms)
     function startAutoRotate() {
         clearInterval(autoRotateInterval);
         autoRotateInterval = setInterval(() => {
             renderRandomBerry(true); // Smooth auto-rotation animation
-        }, 180000); // 180,000 ms = 3 minutes
+        }, 90000); // 90,000 ms = 1 minute 30 seconds
     }
 
     function resetAutoRotate() {
