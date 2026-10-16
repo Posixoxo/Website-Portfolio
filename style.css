@@ -1105,25 +1105,39 @@ a{
 
 .label-names input,
 .label-names textarea {
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   width: 80%;
-  max-width: 250px;
-  background-color: var(--bg-primary);
+  max-width: 320px;
+  
+  /* Use theme surface or card background so inputs stand out nicely in dark mode */
+  background-color: var(--surface, #16100d);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 14px;
 
-  /* Explicit borders */
+  /* Explicit editorial corner edge borders */
   border: none;
-  border-left: 5px solid var(--text-primary);
-  border-bottom: 5px solid var(--text-primary);
+  border-left: 4px solid var(--text-accent);
+  border-bottom: 4px solid var(--text-accent);
 
   box-sizing: border-box;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Remove focus border + glow */
+.label-names input::placeholder,
+.label-names textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* Clear focus highlight */
 .label-names input:focus,
 .label-names textarea:focus {
   outline: none;
-  box-shadow: none;
+  border-color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .FRM textarea {
